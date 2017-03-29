@@ -22,9 +22,18 @@ try {
 	echo $e->getMessage();
 }
 
+define('MAX_FILE_SIZE','2097152');
+
 if (array_key_exists('save', $_POST)){
 
-	print_r ($_FILES);
+	$errors = [];
+
+	#to be sure a file was selected...
+
+	if ($_FILES['pic']['name'])){
+
+		$errors[] = "please choose a file";
+	}
 
 }
 
