@@ -1,10 +1,59 @@
 <?php
 
 
-
+$page_title = "Register";
 
 
 include 'includes/header.php';
+
+if(array_key_exists('register',$_POST)){
+
+	#cache errors
+
+	$error = [];
+
+	#validate first name
+
+	if(empty($_POST['fname'])){
+		$errors[] = "please enter a firstname";
+	}
+
+	if (empty($_POST['lname'])){
+
+		$errors[] = "please enter a last name";
+	}
+
+	if (empty($_POST['email'])){
+
+
+		$errors[] = "enter your email";
+	}
+
+	if (empty($_POST['password'])){
+
+		$errors[] = "password cannot be left empty";
+
+
+	}
+
+	if (empty($_POST['pword'])){
+
+		$errors[] = "confirm your password";
+	}
+
+	if (empty($errors)){
+
+		
+		//do data base stuff
+
+	}else {
+
+		foreach($errors as $error){
+
+			echo $error;
+		}
+	}
+}
 
 
 ?>
