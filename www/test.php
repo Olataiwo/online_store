@@ -30,9 +30,29 @@ if (array_key_exists('save', $_POST)){
 
 	#to be sure a file was selected...
 
-	if ($_FILES['pic']['name'])){
+	if (empty($_FILES['pic']['name'])){
 
 		$errors[] = "please choose a file";
+	}
+
+	#check file size
+
+	if ($_FILES['pic']['size'] > MAX_FILE_SIZE){
+
+		$errors[] = "file size exceeds maximum. maximum:". MAX_FILE_SIZE;
+	}
+
+	if(empty($errors)){
+
+		echo "done";
+
+
+	} else {
+
+		foreach($errors as $error){
+
+			echo $error;
+		}
 	}
 
 }
