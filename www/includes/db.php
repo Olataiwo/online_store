@@ -1,5 +1,9 @@
+<<<<<<< HEAD
 <?php #test.php sandbox
 
+=======
+<?php 
+>>>>>>> second
 
 define('DBNAME','test');
 define('DBUSER','root');
@@ -20,4 +24,8 @@ try {
 } catch (PDOException $e){
 
 	echo $e->getMessage();
-}
+
+} 
+
+?>
+

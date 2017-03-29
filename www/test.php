@@ -23,7 +23,9 @@ try {
 }
 
 define('MAX_FILE_SIZE','2097152');
+
 $ext = ['image/jpg','image/jpeg','image/png'];
+
 
 if (array_key_exists('save', $_POST)){
 
@@ -58,7 +60,9 @@ if (array_key_exists('save', $_POST)){
 
 	#strip filename for spaces
 
-	$strip_name = str_replace (" ","_",$_FILES['pic']['name']);
+
+	$strip_name = $str_replace ("","",$_FILES['pic']['name']);
+
 
 	$filename = $rnd.$strip_name;
 	$destination = 'uploads/' .$filename;
