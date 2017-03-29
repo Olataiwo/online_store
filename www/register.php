@@ -41,6 +41,14 @@ if(array_key_exists('register',$_POST)){
 		$errors[] = "confirm your password";
 	}
 
+	if ($_POST['password'] == $_POST['pword']){
+
+		echo "<p>success</p>";
+	} else {
+
+		$errors[] = "your password did not match";
+	}
+
 	if (empty($errors)){
 
 		
